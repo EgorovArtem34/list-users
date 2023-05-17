@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aside {
+  width: 20%;
+}
+
+.content {
+  width: 80%;
+}
