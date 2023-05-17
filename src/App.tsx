@@ -1,11 +1,12 @@
-// import { useState } from 'react'
+import Aside from './components/Aside/Aside';
+import Content from './components/Content/Content';
 
 function App() {
 
   return (
     <>
-      <div className="aside">Hello</div>
-      <div className="content">XXX</div>
+      <Aside />
+      <Content />
     </>
   )
 }
