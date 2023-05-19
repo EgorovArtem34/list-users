@@ -1,0 +1,23 @@
+.container {
+  width: 80%;
+}
+
+.users-container {
+  padding: 20px 10px;
+}
+
+.user-card {
+  max-width: 420px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background-color: #F3F3F3;
+
+  .user-card__container {
+    padding: 10px;
+  }
+
+  .user-card__last-line {
+    display: flex;
+    justify-content: space-between;
+  }
+}
