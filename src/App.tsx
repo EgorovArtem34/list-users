@@ -1,12 +1,12 @@
 import Aside from './components/Aside/Aside';
-import Content from './components/Content/Content';
+import UsersPage from './components/UsersPage/UsersPage';
 
 function App() {
 
   return (
     <>
       <Aside />
-      <Content />
+      <UsersPage />
     </>
   )
 }
