@@ -4,12 +4,40 @@
   box-sizing: border-box;
 }
 
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
 #root {
   display: flex;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .content {
   width: 80%;
+}
+
+.btn {
+  padding: 5px 15px;
+  color: white;
+  background-color: #4B51EF;
+  background-image: linear-gradient(315deg, #0d312f 0%, #493ec0 74%);
+  border: none;
+}
+
+.btn:hover {
+  background-color: #7275e6;
+  background-image: linear-gradient(315deg, #4b60d7 0%, #5345e8 74%);
+}
+
+.container__header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
 }
