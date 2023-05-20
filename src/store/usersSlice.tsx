@@ -62,7 +62,12 @@ const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-
+    setActiveUser(state, { payload }: PayloadAction<null | number>) {
+      state.activeUser.id = payload;
+    },
+    toggleReadOnly(state, { payload }: PayloadAction<boolean>) {
+      state.activeUser.isReadOnly = payload;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -82,5 +87,5 @@ const usersSlice = createSlice({
   }
 })
 
-
+export const { setActiveUser, toggleReadOnly } = usersSlice.actions;
 export default usersSlice.reducer;
