@@ -1,0 +1,30 @@
+.form {
+
+  fieldset {
+    padding: 12px;
+    border: 1px solid #D8D8D8;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  input {
+    padding: 5px 10px;
+    margin: 5px 0 10px;
+  }
+
+  input,
+  textarea {
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+  }
+
+  textarea {
+    width: 95%;
+    resize: none;
+  }
+
+  .form__button-wrap {
+    display: flex;
+    justify-content: right;
+  }
+}
