@@ -10,4 +10,15 @@
     padding: 20px 10px;
     gap: 10px;
   }
+
+  .aside_icon {
+    width: 30px;
+    height: 30px;
+    color: #4B51EF;
+    filter: drop-shadow(1px 1px 1px rgba(35, 25, 25, 0.5));
+  }
+
+  .btn.active {
+    color: rgb(14, 213, 110);
+  }
 }
