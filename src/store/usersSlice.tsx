@@ -67,7 +67,20 @@ const usersSlice = createSlice({
     },
     toggleReadOnly(state, { payload }: PayloadAction<boolean>) {
       state.activeUser.isReadOnly = payload;
-    }
+    },
+    unsetActiveUser(state) {
+      state.activeUser.id = null;
+      state.activeUser.isReadOnly = true;
+    },
+    setEmptyUsers(state) {
+      state.users = [];
+    },
+    sortByCity(state) {
+      state.users = state.users.sort((user1, user2) => user1.address.city > user2.address.city ? 1 : -1);
+    },
+    sortByCompany(state) {
+      state.users = state.users.sort((user1, user2) => user1.company.name > user2.company.name ? 1 : -1);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -87,5 +100,12 @@ const usersSlice = createSlice({
   }
 })
 
-export const { setActiveUser, toggleReadOnly } = usersSlice.actions;
+export const {
+  setActiveUser,
+  toggleReadOnly,
+  unsetActiveUser,
+  setEmptyUsers,
+  sortByCity,
+  sortByCompany
+} = usersSlice.actions;
 export default usersSlice.reducer;
