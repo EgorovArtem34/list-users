@@ -3,10 +3,10 @@ import { toggleReadOnly } from '../../store/usersSlice';
 import Aside from '../Aside/Aside';
 import Form from './Form';
 
-const UserInfo = () => {
+const UserInfo: React.FC = () => {
   const dispatch = useAppDispatch();
   const { activeUser: { isReadOnly } } = useAppSelector((state) => state.usersSlice);
-  console.log(isReadOnly);
+
   return (
     <>
       <Aside />
