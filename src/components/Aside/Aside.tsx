@@ -11,6 +11,7 @@ const Aside: React.FC = () => {
   const location = useLocation();
   const dispatch = useAppDispatch();
   const [activeBtn, setActiveBtn] = useState<string | null>(null);
+  const isDefaultPath: boolean = location.pathname === routes.defaultPath();
   useEffect(() => {
     setActiveBtn(null);
   }, [location])
@@ -48,13 +49,17 @@ const Aside: React.FC = () => {
         >
           <AiOutlineHome className="aside_icon" />
         </Link>
-        <p>Сортировка</p>
-        <button type='button' className={btnClass('city')} onClick={() => handleClickBtn('city')}>
-          по городу
-        </button>
-        <button type='button' className={btnClass('company')} onClick={() => handleClickBtn('company')}>
-          по компании
-        </button>
+        {isDefaultPath &&
+          <>
+            <p>Сортировка</p>
+            <button type='button' className={btnClass('city')} onClick={() => handleClickBtn('city')}>
+              по городу
+            </button>
+            <button type='button' className={btnClass('company')} onClick={() => handleClickBtn('company')}>
+              по компании
+            </button>
+          </>
+        }
       </div>
     </div>
   )

@@ -11,7 +11,6 @@ function Content() {
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
-
   return (
     <>
       <Aside />
