@@ -23,9 +23,9 @@ type User = {
     catchPhrase: string,
     bs: string
   }
-}
+};
 
-type usersState = {
+type UsersState = {
   users: User[],
   activeUser: {
     id: number | null,
@@ -33,7 +33,7 @@ type usersState = {
   },
   error: string | null,
   isLoading: boolean;
-}
+};
 
 export const fetchUsers = createAsyncThunk<User[], undefined, { rejectValue: string }>(
   'users/fetchUsers',
@@ -45,18 +45,18 @@ export const fetchUsers = createAsyncThunk<User[], undefined, { rejectValue: str
     }
     const users = await response.json();
     return users;
-  }
-)
+  },
+);
 
-const initialState: usersState = {
+const initialState: UsersState = {
   users: [],
   activeUser: {
     id: null,
     isReadOnly: true,
   },
   error: null,
-  isLoading: false
-}
+  isLoading: false,
+};
 
 const usersSlice = createSlice({
   name: 'users',
@@ -76,10 +76,12 @@ const usersSlice = createSlice({
       state.users = [];
     },
     sortByCity(state) {
-      state.users = state.users.sort((user1, user2) => user1.address.city > user2.address.city ? 1 : -1);
+      state.users = state.users.sort((user1, user2) => (user1.address.city > user2.address.city
+        ? 1 : -1));
     },
     sortByCompany(state) {
-      state.users = state.users.sort((user1, user2) => user1.company.name > user2.company.name ? 1 : -1);
+      state.users = state.users.sort((user1, user2) => (user1.company.name > user2.company.name
+        ? 1 : -1));
     },
   },
   extraReducers: (builder) => {
@@ -97,8 +99,8 @@ const usersSlice = createSlice({
         state.users = payload;
         state.isLoading = false;
       });
-  }
-})
+  },
+});
 
 export const {
   setActiveUser,
@@ -106,6 +108,6 @@ export const {
   unsetActiveUser,
   setEmptyUsers,
   sortByCity,
-  sortByCompany
+  sortByCompany,
 } = usersSlice.actions;
 export default usersSlice.reducer;

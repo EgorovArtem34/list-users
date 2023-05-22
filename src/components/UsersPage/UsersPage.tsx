@@ -5,7 +5,7 @@ import { fetchUsers, setActiveUser } from '../../store/usersSlice';
 import './userPage.scss';
 import Aside from '../Aside/Aside';
 
-function Content() {
+const Content = () => {
   const dispatch = useAppDispatch();
   const { users, isLoading } = useAppSelector((state) => state.usersSlice);
   useEffect(() => {
@@ -46,12 +46,18 @@ function Content() {
               </div>
             </div>
           ))}
-          {!isLoading && <p className="users__text">Найдено {users.length} пользователей</p>}
+          {!isLoading && (
+          <p className="users__text">
+            Найдено
+            {users.length}
+            {' '}
+            пользователей
+          </p>
+          )}
         </div>
       </div>
     </>
   );
-}
+};
 
 export default Content;
-

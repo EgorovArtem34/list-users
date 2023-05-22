@@ -1,26 +1,32 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import cn from 'classnames';
-import { AiOutlineHome, } from 'react-icons/ai';
+import { AiOutlineHome } from 'react-icons/ai';
 import { useAppDispatch } from '../../hook';
 import routes from '../../routes';
-import { fetchUsers, setEmptyUsers, sortByCity, sortByCompany, unsetActiveUser } from '../../store/usersSlice';
+import {
+  fetchUsers,
+  setEmptyUsers,
+  sortByCity,
+  sortByCompany,
+  unsetActiveUser,
+} from '../../store/usersSlice';
 import './aside.scss';
 
-const Aside: React.FC = () => {
+const Aside = () => {
   const location = useLocation();
   const dispatch = useAppDispatch();
   const [activeBtn, setActiveBtn] = useState<string | null>(null);
   const isDefaultPath: boolean = location.pathname === routes.defaultPath();
   useEffect(() => {
     setActiveBtn(null);
-  }, [location])
+  }, [location]);
 
   const handleClickLink = () => {
     dispatch(unsetActiveUser());
     dispatch(setEmptyUsers());
     dispatch(fetchUsers());
-  }
+  };
 
   const handleClickBtn = (sortedType: string) => {
     setActiveBtn(sortedType);
@@ -49,21 +55,21 @@ const Aside: React.FC = () => {
         >
           <AiOutlineHome className="aside_icon" />
         </Link>
-        {isDefaultPath &&
-          <>
-            <p>Сортировка</p>
-            <button type='button' className={btnClass('city')} onClick={() => handleClickBtn('city')}>
-              по городу
-            </button>
-            <button type='button' className={btnClass('company')} onClick={() => handleClickBtn('company')}>
-              по компании
-            </button>
-          </>
-        }
+        {isDefaultPath
+          && (
+            <>
+              <p>Сортировка</p>
+              <button type="button" className={btnClass('city')} onClick={() => handleClickBtn('city')}>
+                по городу
+              </button>
+              <button type="button" className={btnClass('company')} onClick={() => handleClickBtn('company')}>
+                по компании
+              </button>
+            </>
+          )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Aside;
-

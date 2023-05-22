@@ -24,7 +24,6 @@ const UserInfo: React.FC = () => {
         <Form />
       </div>
     </>
-  )
+  );
 };
 export default UserInfo;
-
