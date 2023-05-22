@@ -12,12 +12,6 @@
     margin: 5px 0 10px;
   }
 
-  input,
-  textarea {
-    border: 1px solid #D8D8D8;
-    border-radius: 5px;
-  }
-
   textarea {
     width: 95%;
     resize: none;
@@ -27,5 +21,21 @@
   .form__button-wrap {
     display: flex;
     justify-content: right;
+  }
+}
+
+input,
+textarea {
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+}
+
+.btn.btn__submit {
+  background-color: green;
+  background-image: linear-gradient(315deg, #21a8a1 0%, #0d902d 74%);
+
+  &:hover {
+    background-color: green;
+    background-image: linear-gradient(315deg, #24aca6 0%, #17d246 74%);
   }
 }

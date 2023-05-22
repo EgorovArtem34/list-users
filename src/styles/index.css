@@ -47,3 +47,7 @@ a {
   justify-content: space-between;
   padding-bottom: 16px;
 }
+
+.form__input-error {
+  border-color: red;
+}
