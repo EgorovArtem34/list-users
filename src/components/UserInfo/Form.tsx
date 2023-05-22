@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { toast } from 'react-toastify';
 import { Navigate } from 'react-router-dom';
 import { useAppSelector } from '../../hook';
 import routes from '../../routes';
@@ -34,7 +35,7 @@ const Form = () => {
     validationSchema: signUpSchema,
     onSubmit: (changedUser) => {
       console.log(JSON.stringify(changedUser), changedUser);
-      alert('Введеные вами значения выведены в консоль');
+      toast.success('Введеные вами значения выведены в консоль');
     }
   })
 
