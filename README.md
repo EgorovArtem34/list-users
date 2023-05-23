@@ -23,11 +23,12 @@
 3. Установите зависимости `make install`
 5. Запустите локальную версию `make start`
 6. Нажмите на кнопку `h` для показа настроек
-  `press r to restart the server
+  ```press r to restart the server
   press u to show server url
   press o to open in browser
   press c to clear console
-  press q to quit`
+  press q to quit
+  ```
 
 ## Скриншоты
 
