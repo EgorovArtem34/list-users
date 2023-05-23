@@ -57,7 +57,7 @@ const Aside = () => {
         </Link>
         {isDefaultPath
           && (
-            <>
+            <div className="aside__sort">
               <p>Сортировка</p>
               <button type="button" className={btnClass('city')} onClick={() => handleClickBtn('city')}>
                 по городу
@@ -65,7 +65,7 @@ const Aside = () => {
               <button type="button" className={btnClass('company')} onClick={() => handleClickBtn('company')}>
                 по компании
               </button>
-            </>
+            </div>
           )}
       </div>
     </div>

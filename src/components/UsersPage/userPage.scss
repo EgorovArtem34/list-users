@@ -19,16 +19,33 @@
     padding: 10px;
   }
 
-  .user-card__last-line {
-    display: flex;
-    justify-content: space-between;
-  }
+}
+
+.user-card__last-line {
+  display: flex;
+  justify-content: space-between;
 }
 
 .container__users {
   max-width: 420px;
 
+}
+
+.users__text {
+  text-align: right;
+}
+
+
+@media (max-width: 510px) {
+
   .users__text {
-    text-align: right;
+    text-align: center;
+  }
+}
+
+@media (max-width: 330px) {
+
+  .user-card__last-line {
+    display: block;
   }
 }

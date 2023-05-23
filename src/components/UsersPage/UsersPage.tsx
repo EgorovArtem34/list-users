@@ -47,12 +47,13 @@ const Content = () => {
             </div>
           ))}
           {!isLoading && (
-          <p className="users__text">
-            Найдено
-            {users.length}
-            {' '}
-            пользователей
-          </p>
+            <p className="users__text">
+              Найдено
+              {' '}
+              {users.length}
+              {' '}
+              пользователей
+            </p>
           )}
         </div>
       </div>
